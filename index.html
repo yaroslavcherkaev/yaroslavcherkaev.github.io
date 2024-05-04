@@ -1,114 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <script crossorigin src="https://cdn.jsdelivr.net/npm/@babel/standalone@7/babel.min.js"></script>
-    <!-- To make the map appear, you must add your apikey -->
-    <script src="https://api-maps.yandex.ru/v3/?apikey=9b8c698c-5c70-4a8b-89a7-e613e9bf850f&lang=RU" type="text/javascript"></script>
-
-    <script
-      data-plugins="transform-modules-umd"
-      data-presets="typescript"
-      type="text/babel"
-      src="./common.ts"
-    ></script>
-    <script data-plugins="transform-modules-umd" data-presets="typescript" type="text/babel">
-      import type {LngLat, RouteFeature} from '@yandex/ymaps3-types';
-      import {LOCATION, INITIAL_ROUTE_POINTS, getPointStr, fetchRoute, lineStyle, InfoMessage} from './common';
-
-      window.map = null;
-
-      main();
-      async function main() {
-        // Waiting for all api elements to be loaded
-        await ymaps3.ready;
-        const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapFeature, YMapControls} = ymaps3;
-        const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
-
-        // Initialize the map
-        map = new YMap(
-          // Pass the link to the HTMLElement of the container
-          document.getElementById('app'),
-          // Pass the map initialization parameters
-          {location: LOCATION, showScaleInCopyrights: true, margin: [100, 100, 100, 100]},
-          [
-            // Add a map scheme layer
-            new YMapDefaultSchemeLayer({}),
-            // Add a layer of geo objects to display markers and line
-            new YMapDefaultFeaturesLayer({})
-          ]
-        );
-
-        // Create and add route start and end markers to the map.
-        const pointA = new YMapDefaultMarker({
-          coordinates: INITIAL_ROUTE_POINTS[0],
-          draggable: true,
-          title: 'Point A',
-          subtitle: getPointStr(INITIAL_ROUTE_POINTS[0]),
-          onDragMove: onDragMovePointAHandler,
-          onDragEnd: onDragEndHandler
-        });
-        const pointB = new YMapDefaultMarker({
-          coordinates: INITIAL_ROUTE_POINTS[1],
-          draggable: true,
-          title: 'Point B',
-          subtitle: getPointStr(INITIAL_ROUTE_POINTS[1]),
-          onDragMove: onDragMovePointBHandler,
-          onDragEnd: onDragEndHandler
-        });
-        map.addChild(pointA).addChild(pointB);
-
-        // Create and add a route line to the map
-        const routeLine = new YMapFeature({geometry: {type: 'LineString', coordinates: []}, style: lineStyle});
-        map.addChild(routeLine);
-
-        // Get and process data about the initial route
-        fetchRoute(pointA.coordinates, pointB.coordinates).then(routeHandler);
-
-        /* Create and add a shared container for controls to the map.
-    Using YMapControls you can change the position of the control */
-        const topRightControls = new YMapControls({position: 'top right'});
-        map.addChild(topRightControls);
-        // Add a custom information message control to the map
-        topRightControls.addChild(new InfoMessage({text: 'Drag any marker to rebuild the route.'}));
-
-        // The handler functions for updating the coordinates and subtitle of the marker when dragging
-        function onDragMovePointAHandler(coordinates: LngLat) {
-          pointA.update({coordinates, subtitle: getPointStr(coordinates)});
-        }
-        function onDragMovePointBHandler(coordinates: LngLat) {
-          pointB.update({coordinates, subtitle: getPointStr(coordinates)});
-        }
-
-        // The handler function for updating route data after dragging the marker
-        function onDragEndHandler() {
-          fetchRoute(pointA.coordinates, pointB.coordinates).then(routeHandler);
-        }
-
-        /* A handler function that updates the route line 
-    and shifts the map to the new route boundaries, if they are available. */
-        function routeHandler(newRoute: RouteFeature) {
-          // If the route is not found, then we alert a message and clear the route line
-          if (!newRoute) {
-            alert('Route not found');
-            routeLine.update({geometry: {type: 'LineString', coordinates: []}});
-            return;
-          }
-
-          routeLine.update({...newRoute});
-          if (newRoute.properties.bounds) {
-            map.setLocation({bounds: newRoute.properties.bounds, duration: 300});
-          }
-        }
-      }
+    <!-- Загружаем API -->
+    <script src="https://api-maps.yandex.ru/v3/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
+    <script>
+      // При успешной загрузке API доступен промис `ymaps3.ready`
+      ymaps3.ready.then(() => { console.log('hello') });
     </script>
-
-    <!-- prettier-ignore -->
-    <style> html, body, #app { width: 100%; height: 100%; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; } .toolbar { position: absolute; z-index: 1000; top: 0; left: 0; display: flex; align-items: center; padding: 16px; } .toolbar a { padding: 16px; }  </style>
-    <link rel="stylesheet" href="./common.css" />
   </head>
-  <body>
-    <div id="app"></div>
-  </body>
 </html>
