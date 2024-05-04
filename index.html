@@ -2,10 +2,13 @@
 <html>
   <head>
     <!-- Загружаем API -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://api-maps.yandex.ru/v3/?apikey=9b8c698c-5c70-4a8b-89a7-e613e9bf850f&lang=ru_RU"></script>
-    <script>
-      // При успешной загрузке API доступен промис `ymaps3.ready`
-      ymaps3.ready.then(() => { console.log('hello') });
-    </script>
+    <script src="control.js"></script>
   </head>
+  <body>
+
+    <div id="map" style="width: 600px; height: 400px"></div>
+
+  </body>
 </html>
