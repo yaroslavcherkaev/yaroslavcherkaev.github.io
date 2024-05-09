@@ -1,4 +1,4 @@
-var tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
 tg.expand(); 
 tg.MainButton.text = "Указать адресс";
 tg.MainButton.show();
@@ -28,8 +28,10 @@ async function initMap() {
             }
         }
     );
-    
-    
+
+    // Добавляем слой для отображения схематической карты
+    map.addChild(new YMapDefaultSchemeLayer());
+
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         let textInput = document.getElementById("search");
         let res = ymaps3.search({
@@ -37,13 +39,10 @@ async function initMap() {
         }).then(function (res) {
             console.log(res[0])
         })
-        tg.sendData(res); 
+        //tg.sendData(res); 
         //при клике на основную кнопку отправляем данные в строковом виде
     });
-
-
-    // Добавляем слой для отображения схематической карты
-    map.addChild(new YMapDefaultSchemeLayer());
+    
 }
 
 
