@@ -1,4 +1,3 @@
-
 initMap();
 
 async function initMap() {
@@ -24,6 +23,20 @@ async function initMap() {
         }
     );
 
+    var textInput = document.getElementById("search");
+    var searchButton = document.getElementById("search_button");
+    searchButton.onclick = function(event) {
+            console.log('here')
+            ymaps3.search({
+                'text': textInput.value
+            }).then(function (res) {
+                console.log(res[0])
+            })
+    };
+
+
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
 }
+
+
