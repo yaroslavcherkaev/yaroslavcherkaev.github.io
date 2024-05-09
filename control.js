@@ -1,8 +1,3 @@
-const tg = window.Telegram.WebApp;
-tg.expand(); 
-tg.MainButton.text = "Указать адресс";
-tg.MainButton.show();
-tg.MainButton.enable();
 
 initMap();
 
@@ -11,6 +6,7 @@ async function initMap() {
     await ymaps3.ready;
 
     const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+    const tg = window.Telegram.WebApp;
 
     // Иницилиазируем карту
     const map = new YMap(
@@ -31,17 +27,10 @@ async function initMap() {
 
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
-
-    Telegram.WebApp.onEvent('mainButtonClicked', function(){
-        let textInput = document.getElementById("search");
-        let res = ymaps3.search({
-            'text': textInput.value
-        }).then(function (res) {
-            console.log(res[0])
-        })
-        //tg.sendData(res); 
-        //при клике на основную кнопку отправляем данные в строковом виде
-    });
+    tg.expand(); 
+    tg.MainButton.text = "Указать адресс";
+    tg.MainButton.show();
+    tg.MainButton.enable();
     
 }
 
