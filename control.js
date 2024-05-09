@@ -27,8 +27,7 @@ async function initMap() {
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
     tg.expand(); 
-    tg.MainButton.text = "Указать адресс";
-    tg.MainButton.show();
+    tg.MainButton.text = "Найти адресс";
     tg.MainButton.enable();
     
 
