@@ -28,12 +28,14 @@ async function initMap() {
     // Добавляем слой для отображения схематической карты
     map.addChild(new YMapDefaultSchemeLayer());
     tg.expand(); 
-    tg.MainButton.text = "Найти адресс";
+    tg.MainButton.text = "Указать адресс";
     tg.MainButton.show();
     tg.MainButton.enable();
 
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
+        alert("Here");
         tg.sendData("some string that we need to send"); 
+        
         //при клике на основную кнопку отправляем данные в строковом виде
     });
 
