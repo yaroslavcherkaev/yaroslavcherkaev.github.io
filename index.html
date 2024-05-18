@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://api-maps.yandex.ru/v3/?apikey=9b8c698c-5c70-4a8b-89a7-e613e9bf850f&lang=ru_RU"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=97fb642a-8ecb-4410-8278-f2660f9d6fef&lang=ru_RU"></script>
     <script src="control.js"></script>
     <style>
       body{
@@ -19,26 +20,45 @@
         width: 100%;
         height:65vh;
       }
-      #search{
+      #input_search{
         font-size: 24px;
-        min-width:100%;
+        min-width:60%;
         border:none;
         outline: 0;
-        padding-left:5px;
+        padding-right:5px;
         height:6vh;
+        background-color: #8EDBFF;
+        border-radius: 10px;
+        color: white;
+
       }
-      #search_button{
+      #block_search{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width:100%;
+        justify-content: space-around;
+        margin: 10px;
+      }
+      #button_search{
+        height:6vh;
         font-size: 24px;
-        background: var(--tg-theme-button-color);
-	      color: var(--tg-theme-button-text-color);
+        min-width: 40%;
+        margin: 0;
         border: 0px;
-        min-width:100%;
-        height:10vh;
+        border-radius: 10px;
+        background-color: #1990CB;
+        color: white;
+
       }
+
     </style>
   </head>
   <body>
-    <input id="search"/>
+    <div id="block_search">
+      <input id="input_search" placeholder="Поиск"/>
+      <button id="button_search"> Найти </button>
+    </div>
     <div id="map"></div>
   </body>
 </html>
