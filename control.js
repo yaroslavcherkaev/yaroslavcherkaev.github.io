@@ -152,8 +152,14 @@ async function initMap() {
     tg.MainButton.enable();
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         if (pointB != null){
-            alert(JSON.stringify(pointB));
-            tg.sendData(JSON.stringify(pointB)); 
+            try{
+                alert(JSON.stringify(pointB));
+                tg.sendData(JSON.stringify(pointB)); 
+            }
+            catch(e){
+                alert(e);
+            }
+
         }
         else{
             tg.sendData("не удалось получить координаты"); 
