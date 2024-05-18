@@ -150,10 +150,9 @@ async function initMap() {
     tg.MainButton.text = "Указать адресс";
     tg.MainButton.show();
     tg.MainButton.enable();
-
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
-
         if (pointB != null){
+            alert(JSON.stringify(pointB));
             tg.sendData(JSON.stringify(pointB)); 
         }
         else{
