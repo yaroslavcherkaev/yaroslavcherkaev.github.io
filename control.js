@@ -152,9 +152,12 @@ async function initMap() {
     tg.MainButton.enable();
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
         if (pointB != null){
+
             try{
-                alert(JSON.stringify(pointB));
-                tg.sendData(JSON.stringify(pointB)); 
+                var c = {};
+                c[1] = pointB;
+                alert(JSON.stringify(c));
+                tg.sendData(JSON.stringify(c)); 
             }
             catch(e){
                 alert(e);
