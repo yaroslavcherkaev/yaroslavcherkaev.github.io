@@ -12,53 +12,72 @@
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
             display: flex;
+            margin: 0;
             flex-direction: column;
             align-items: center;
             font-size: 18px;
           }
-      #map{
-        width: 100%;
-        height:65vh;
-      }
+
       #input_search{
         font-size: 24px;
         min-width:60%;
         border:none;
         outline: 0;
         padding-right:5px;
-        height:6vh;
-        background-color: #8EDBFF;
+        background-color:var(--tg-theme-button-color);
         border-radius: 10px;
-        color: white;
+        color: var(--tg-theme-text-color);
 
       }
+
+
       #block_search{
         display: flex;
         flex-direction: row;
         align-items: center;
         width:100%;
+        height:15vh;
         justify-content: space-around;
-        margin: 10px;
       }
-      #button_search{
-        height:6vh;
-        font-size: 24px;
-        min-width: 40%;
-        margin: 0;
-        border: 0px;
-        border-radius: 10px;
-        background-color: #1990CB;
-        color: white;
 
+
+      #button_search{
+        font-size: 24px;
+        border-radius: 10px;
+        background: var(--tg-theme-button-color);
+        color: var(--tg-theme-button-text-color);
+
+      }
+
+      #map{
+        width: 100%;
+        height: 70vh;
+      }
+
+      #footer{
+        display: flex;
+        width:100%;
+        height:15vh;
+        align-items: center;
+        justify-content: center;
+        color: var(--tg-theme-text-color);
+        background-color: var(--tg-theme-bg-color);
+        text-align: center;
       }
 
     </style>
   </head>
   <body>
+
     <div id="block_search">
       <input id="input_search" placeholder="Поиск"/>
       <button id="button_search"> Найти </button>
     </div>
+
     <div id="map"></div>
+
+    <div id="footer"> 
+      @MiniMapTG v1.0
+    </div>
   </body>
 </html>

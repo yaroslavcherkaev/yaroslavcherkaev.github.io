@@ -4,7 +4,7 @@ async function initMap() {
 
     ymaps3.ready.then(() => {
         // Copy your api key for routes from the developer's dashboard and paste it here
-        ymaps3.getDefaultConfig().setApikeys({router: '97fb642a-8ecb-4410-8278-f2660f9d6fef'});
+        //ymaps3.getDefaultConfig().setApikeys({router: '97fb642a-8ecb-4410-8278-f2660f9d6fef'});
     });
 
     const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapFeature} = ymaps3;
@@ -80,7 +80,7 @@ async function initMap() {
                 title: 'Завод'
               });
     var pointB = null;
-    map.addChild(new YMapDefaultSchemeLayer());
+    //map.addChild(new YMapDefaultSchemeLayer({}));
     // Добавляем точку завода
     map.addChild(pointA);
 
