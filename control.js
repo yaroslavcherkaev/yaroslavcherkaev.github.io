@@ -154,10 +154,8 @@ async function initMap() {
         if (pointB != null){
 
             try{
-                var c = {};
-                c[1] = pointB;
-                alert(JSON.stringify(c));
-                tg.sendData(JSON.stringify(c)); 
+                alert(pointB.coordinates);
+                //tg.sendData(JSON.stringify(c)); 
             }
             catch(e){
                 alert(e);
