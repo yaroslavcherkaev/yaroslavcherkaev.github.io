@@ -8,6 +8,17 @@
     <script src="https://api-maps.yandex.ru/v3/?apikey=97fb642a-8ecb-4410-8278-f2660f9d6fef&lang=ru_RU"></script>
     <script src="control.js"></script>
     <style>
+      button, input{
+            padding: 0;
+            border: none;
+            color: inherit;
+            background-color: transparent;
+            /* отображаем курсор в виде руки при наведении; некоторые
+            считают, что необходимо оставлять стрелочный вид для кнопок */
+            cursor: pointer;
+        }
+
+
       body{
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
@@ -15,18 +26,18 @@
             margin: 0;
             flex-direction: column;
             align-items: center;
-            font-size: 18px;
+            font-size: 48px;
           }
 
       #input_search{
-        font-size: 24px;
-        min-width:60%;
         border:none;
         outline: 0;
-        padding-right:5px;
+        padding-left:5px;
         background-color:var(--tg-theme-button-color);
         border-radius: 10px;
         color: var(--tg-theme-text-color);
+        font-size: 56px;
+        height: 60px;
 
       }
 
@@ -42,11 +53,12 @@
 
 
       #button_search{
-        font-size: 24px;
         border-radius: 10px;
+        height: 60px;
         background: var(--tg-theme-button-color);
         color: var(--tg-theme-button-text-color);
-
+        font-size: 56px;
+        text-align: center;
       }
 
       #map{
