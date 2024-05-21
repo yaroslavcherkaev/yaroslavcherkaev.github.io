@@ -1,11 +1,13 @@
 initMap();
 
 async function initMap() {
+    // Waiting for all api elements to be loaded
+    await ymaps3.ready.then(() => {
+        
+       var loader =  document.getElementById("loader");
+       loader.style.visibility = "collapse";
 
-    ymaps3.ready.then(() => {
-        // Copy your api key for routes from the developer's dashboard and paste it here
-        //ymaps3.getDefaultConfig().setApikeys({router: '97fb642a-8ecb-4410-8278-f2660f9d6fef'});
-    });
+      });
 
     const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapFeature} = ymaps3;
     const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
