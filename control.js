@@ -2,12 +2,7 @@ initMap();
 
 async function initMap() {
     // Waiting for all api elements to be loaded
-    await ymaps3.ready.then(() => {
-        
-       var loader =  document.getElementById("loader");
-       loader.style.visibility = "collapse";
-
-      });
+    await ymaps3.ready;
 
     const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapFeature} = ymaps3;
     const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
