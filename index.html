@@ -9,7 +9,6 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-
       .roboto-mono-Roboto {
         font-family: "Roboto Mono", monospace;
         font-optical-sizing: auto;
@@ -31,10 +30,13 @@
       body{
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
-            display: flex;
             margin: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
             flex-direction: column;
-            align-items: center;
+
+
             font-size: 48px;
             font-family: "Roboto Mono", monospace;
           }
@@ -42,68 +44,65 @@
       #input_search{
         outline: 0;
         padding-left:3px;
-        border-bottom: 5px solid #40A7E3;
+        background-color: #FFFFFF;
+        height: 10vh;
         color: var(--tg-theme-text-color);
         font-size: 56px;
-        height: 60px;
-        max-width:50%;
-        min-width:25%;
         font-family: "Roboto Mono", monospace;
 
-      }
-
-
-      #block_search{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        max-width:100%;
-        height:15vh;
-        justify-content: space-around;
-      }
-
-
-      #button_search{
-        border-radius: 55px;
-        padding: 15px;
-        background-color: #40A7E3;
-        color: white;
-        font-size: 48px;
-        font-weight: bold;
-        min-width:25%;
-        text-align: center;
-        font-family: "Roboto Mono", monospace;
       }
 
       #map{
-        max-width:100%;
-        min-width: 100%;
-        height: 70vh;
+        height: 90vh;
+        width: 100%;
       }
 
-      #footer{
-        display: flex;
-        max-width:100%;
-        height:15vh;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: var(--tg-theme-text-color);
-        background-color: var(--tg-theme-bg-color);
-        text-align: center;
+
+      #pin{
+        position: absolute;
+        border-radius: 50%;
+        top: 50vh;
+        left:50%;
+        z-index: 1000;
+        width: 48px;
+        height:48px;
+        margin-left: -24px; 
+      }
+
+      #pin-circle{
+        background: #40A7E3;
+        border-radius: 1.5rem;
+        content: "";
+        height: 28px;
+        left: 10px;
+        position: absolute;
+        top: 1px;
+        transition: transform 300ms;
+        width: 28px;
+        z-index: 1001;
+      }
+
+      #pin-stick{
+        background: #111111;
+        border-radius: 1.5rem;
+        content: "";
+        height: 24px;
+        left: 23px;
+        position: absolute;
+        top: 23px;
+        transition: transform 300ms;
+        width: 3px;
       }
 
     </style>
+
   </head>
   <body>
-
-    <div id="block_search">
-      <input id="input_search" placeholder="Поиск"/>
-    </div>
+    <input id="input_search" placeholder="Поиск"/>
     <div id="map"></div>
-
-    <div id="footer"> 
-      <a href="https://t.me/MiniMapbot">@MiniMap</a>
+    <div id="pin">
+      <div id="pin-circle"></div>
+      <div id="pin-stick"></div>
     </div>
   </body>
 </html>
