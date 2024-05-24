@@ -81,7 +81,7 @@ async function initMap() {
     // Добавляем точку завода
     map.addChild(pointA);
 
-    document.getElementById('button_search').onclick = myFunction;
+   // document.getElementById('button_search').onclick = myFunction;
     
     
     function myFunction() {
