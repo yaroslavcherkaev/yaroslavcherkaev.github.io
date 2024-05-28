@@ -170,7 +170,7 @@ async function initMap() {
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
             try{
                 let answer = [map.center.toString(), document.getElementById('input_search').value];
-                tg.sendData(answer); 
+                tg.sendData(answer.toString()); 
             }
             catch(e){
                 tg.sendData("Не удалось получить адресс"); 
