@@ -7,6 +7,7 @@
     <script src="https://api-maps.yandex.ru/v3/?apikey=9b8c698c-5c70-4a8b-89a7-e613e9bf850f&lang=ru_RU"></script>
     <script src="control.js"></script>
     <style>
+
       @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
       .roboto-mono-Roboto {
@@ -25,7 +26,7 @@
             считают, что необходимо оставлять стрелочный вид для кнопок */
             cursor: pointer;
             text-decoration: none;
-        }
+      }
 
       body{
             color: var(--tg-theme-text-color);
@@ -39,15 +40,15 @@
 
             font-size: 48px;
             font-family: "Roboto Mono", monospace;
-          }
+      }
 
       #input_search{
         outline: 0;
-        padding-left:3px;
+        padding-left:10px;
         background-color: #FFFFFF;
         height: 10vh;
         color: var(--tg-theme-text-color);
-        font-size: 56px;
+        font-size: 3rem;
         font-family: "Roboto Mono", monospace;
 
       }
@@ -60,25 +61,23 @@
 
       #pin{
         position: absolute;
-        border-radius: 50%;
         top: 50vh;
         left:50%;
         z-index: 1000;
-        width: 48px;
-        height:48px;
-        margin-left: -24px; 
+        height: 10vh;
+        width: 10vh;
       }
 
       #pin-circle{
         background: #40A7E3;
-        border-radius: 1.5rem;
+        border-radius: 4rem;
         content: "";
-        height: 28px;
-        left: 10px;
+        height: 3vh;
+        width: 3vh;
+        left: 0.8vh;
         position: absolute;
         top: 1px;
         transition: transform 300ms;
-        width: 28px;
         z-index: 1001;
       }
 
@@ -86,12 +85,13 @@
         background: #111111;
         border-radius: 1.5rem;
         content: "";
-        height: 24px;
-        left: 23px;
+        height: 3vh;
+        width: 3vh;
+        left: 2vh;
         position: absolute;
-        top: 23px;
+        top: 2vh;
         transition: transform 300ms;
-        width: 3px;
+        width: 0.5vh;
       }
 
     </style>
