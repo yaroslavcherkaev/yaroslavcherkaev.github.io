@@ -168,21 +168,15 @@ async function initMap() {
     tg.MainButton.show();
     tg.MainButton.enable();
     Telegram.WebApp.onEvent('mainButtonClicked', function(){
-        if (pointB != null){
-
             try{
                 let answer = [map.center.toString(), document.getElementById('input_search').value];
                 tg.sendData(answer); 
             }
             catch(e){
-                alert(e);
+                tg.sendData("Не удалось получить адресс"); 
             }
-
         }
-        else{
-            tg.sendData("не удалось получить координаты"); 
-        }
-    });
+    );
 
 }
 
