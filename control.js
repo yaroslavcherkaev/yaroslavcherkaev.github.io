@@ -1,3 +1,22 @@
+
+
+
+
+async function ValidateBot(){
+    let params = new URLSearchParams(document.location.search);
+    let value = params.get('key'); 
+    // isValid = await fetch(key)
+    if (isValid){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+
 initMap();
 
 async function initMap() {

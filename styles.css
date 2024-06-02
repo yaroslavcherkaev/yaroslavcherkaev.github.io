@@ -17,6 +17,7 @@ button, input, a, p {
       background-color: transparent;
       cursor: pointer;
       text-decoration: none;
+      border-radius: 0;
 }
 
 p{
@@ -114,4 +115,47 @@ body{
     top: 2vh;
     transition: transform 300ms;
     width: 0.5vh;
+}
+
+
+@media (max-height: 410px) {
+
+
+.map-container{
+    visibility: collapse;
+}
+.map{
+    visibility: collapse;
+}
+
+.map-pin{
+    visibility: collapse;
+}
+
+body{
+    grid-template-rows: 80vh;
+}
+
+.form-grid{
+    grid-template-rows: 20vh 20vh 20vh 20vh;
+
+}
+
+.form-input-block{
+    grid-template-rows: 4vh 16vh;
+}
+
+.form-grid-row{
+    grid-template-rows: 4vh 16vh;
+}
+
+.form-grid-row-caption{
+    font-size: 3vh;
+}
+
+.form-grid-row-main-input{
+    font-size: 6vh;
+
+}
+
 }
