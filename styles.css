@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+.roboto-mono-Roboto {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+button, input, a, p {
+      font-family: "Roboto Mono", monospace;
+      padding: 0;
+      border: none;
+      color: inherit;
+      outline:0;
+      background-color: transparent;
+      cursor: pointer;
+      text-decoration: none;
+}
+
+p{
+    text-align: center;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 40vh 55vh;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-rows: 10vh 10vh 10vh 10vh;
+    grid-template-columns: 100%;
+    background-color: #29A0DC;
+    width: 100%;
+}
+
+.form-grid-row{
+    display: grid;
+    grid-template-rows: 2vh 8vh;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.form-grid-row-caption{
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.5vh;
+    display: flex;
+    align-items: center;
+    color: #FFF;    
+}
+
+.form-grid-row-main-input{
+    font-family: "Roboto Mono", monospace;
+    font-size: 3vh;
+    background-color: #FFF;
+    width: 100%;
+}
+
+.form-grid-row-splitted{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form-input-block{
+    display: grid;
+    grid-template-rows: 2vh 8vh;
+}
+
+.map-container{
+    background-color:#29A0DC ;
+}
+
+.map{
+    width: 100%;
+    height: 100%;
+}
+
+.map-pin{
+    position: absolute;
+    top: 60%;
+    left:50%;
+    z-index: 1000;
+    height: 10vh;
+    width: 10vh;
+}
+
+.map-pin-circle{
+    background: #40A7E3;
+    border-radius: 4rem;
+    content: "";
+    height: 3vh;
+    width: 3vh;
+    left: 0.8vh;
+    position: absolute;
+    top: 1px;
+    transition: transform 300ms;
+    z-index: 1001;
+}
+
+.map-pin-stick{
+    background: #111111;
+    border-radius: 1.5rem;
+    content: "";
+    height: 3vh;
+    width: 3vh;
+    left: 2vh;
+    position: absolute;
+    top: 2vh;
+    transition: transform 300ms;
+    width: 0.5vh;
+}

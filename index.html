@@ -3,107 +3,61 @@
   <head>
     <!-- Загружаем API -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://api-maps.yandex.ru/v3/?apikey=9b8c698c-5c70-4a8b-89a7-e613e9bf850f&lang=ru_RU"></script>
     <script src="control.js"></script>
-    <style>
-
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
-      .roboto-mono-Roboto {
-        font-family: "Roboto Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      button, input, a{
-            padding: 0;
-            border: none;
-            color: inherit;
-            background-color: transparent;
-            /* отображаем курсор в виде руки при наведении; некоторые
-            считают, что необходимо оставлять стрелочный вид для кнопок */
-            cursor: pointer;
-            text-decoration: none;
-      }
-
-      body{
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-
-
-            font-size: 48px;
-            font-family: "Roboto Mono", monospace;
-      }
-
-      #input_search{
-        outline: 0;
-        padding-left:10px;
-        background-color: #FFFFFF;
-        height: 10vh;
-        color: var(--tg-theme-text-color);
-        font-size: 3rem;
-        font-family: "Roboto Mono", monospace;
-
-      }
-
-      #map{
-        height: 90vh;
-        width: 100%;
-      }
-
-
-      #pin{
-        position: absolute;
-        top: 50vh;
-        left:50%;
-        z-index: 1000;
-        height: 10vh;
-        width: 10vh;
-      }
-
-      #pin-circle{
-        background: #40A7E3;
-        border-radius: 4rem;
-        content: "";
-        height: 3vh;
-        width: 3vh;
-        left: 0.8vh;
-        position: absolute;
-        top: 1px;
-        transition: transform 300ms;
-        z-index: 1001;
-      }
-
-      #pin-stick{
-        background: #111111;
-        border-radius: 1.5rem;
-        content: "";
-        height: 3vh;
-        width: 3vh;
-        left: 2vh;
-        position: absolute;
-        top: 2vh;
-        transition: transform 300ms;
-        width: 0.5vh;
-      }
-
-    </style>
 
   </head>
+
   <body>
-    <input id="input_search" placeholder="Поиск"/>
-    <div id="map"></div>
-    <div id="pin">
-      <div id="pin-circle"></div>
-      <div id="pin-stick"></div>
+    <div class="form-grid">
+      <div class="form-grid-row">
+        <div class="form-grid-row-caption">Город, улица, дом:</div>
+        <input  class="form-grid-row-main-input" id="main-input" placeholder="Город, улица, дом"></input>
+      </div>
+      <div class="form-grid-row-splitted">
+        <div class="form-input-block">
+          <div class="form-grid-row-caption">Подъезд:</div>
+          <input  class="form-grid-row-main-input" id="сomm-input" placeholder="Подъезд"></input>
+        </div>
+        <div class="form-input-block">
+          <div class="form-grid-row-caption">Код домофона:</div>
+          <input  class="form-grid-row-main-input" id="сomm-input" placeholder="Код домофона"></input>
+        </div>
+      </div>
+      <div class="form-grid-row-splitted">
+        <div class="form-input-block">
+          <div class="form-grid-row-caption">Этаж:</div>
+          <input  class="form-grid-row-main-input" id="сomm-input" placeholder="Этаж"></input>
+        </div>
+        <div class="form-input-block">
+          <div class="form-grid-row-caption">Квартира:</div>
+          <input  class="form-grid-row-main-input" id="сomm-input" placeholder="Квартира"></input>
+        </div>
+      </div>
+      <div class="form-grid-row">
+        <div class="form-grid-row-caption">Комментарий:</div>
+        <input  class="form-grid-row-main-input" id="сomm-input" placeholder="Комментарий"></input>
+      </div>
     </div>
+
+    <div class="map-container">
+      <div class="map-pin">
+        <div class="map-pin-circle"></div>
+        <div class="map-pin-stick"></div>
+      </div>
+      <div class="map"></div>
+    </div>
+
+
   </body>
 </html>
