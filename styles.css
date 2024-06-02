@@ -37,15 +37,19 @@ body{
     display: grid;
     grid-template-rows: 10vh 10vh 10vh 10vh;
     grid-template-columns: 100%;
-    background-color: #29A0DC;
+    background-color: var(--tg-theme-bg-color);
     width: 100%;
+    padding-left: 20px;   
+    padding-right: 20px;  
+    box-sizing: border-box;
 }
 
 .form-grid-row{
     display: grid;
-    grid-template-rows: 2vh 8vh;
+    grid-template-rows: 2vh 6vh;
     grid-template-columns: 1fr;
     width: 100%;
+
 }
 
 .form-grid-row-caption{
@@ -53,28 +57,46 @@ body{
     font-size: 1.5vh;
     display: flex;
     align-items: center;
-    color: #FFF;    
+    color: var(--tg-theme-text-color);   
+    padding-left: 5px;   
+    box-sizing: border-box;
 }
 
 .form-grid-row-main-input{
     font-family: "Roboto Mono", monospace;
-    font-size: 3vh;
+    font-size: 2.5vh;
+    background-color: #FFF;
+    width:  100%;
+    border-radius: 10px;
+    padding-left: 5px;    
+    box-sizing: border-box;
+}
+
+
+.form-grid-row-mini-input{
+    font-family: "Roboto Mono", monospace;
+    font-size: 2vh;
     background-color: #FFF;
     width: 100%;
+    border-radius: 10px;
+    padding-left: 5px;   
+    box-sizing: border-box;
 }
+
+
 
 .form-grid-row-splitted{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 20% 40%;
 }
 
 .form-input-block{
     display: grid;
-    grid-template-rows: 2vh 8vh;
+    grid-template-rows: 2vh 6vh;
 }
 
 .map-container{
-    background-color:#29A0DC ;
+    background-color:var(--tg-theme-bg-color);
 }
 
 .map{
@@ -92,7 +114,7 @@ body{
 }
 
 .map-pin-circle{
-    background: #40A7E3;
+    background: var(--tg-theme-bg-color);
     border-radius: 4rem;
     content: "";
     height: 3vh;
@@ -118,7 +140,7 @@ body{
 }
 
 
-@media (max-height: 410px) {
+@media (max-height: 500px) {
 
 
 .map-container{
@@ -142,11 +164,11 @@ body{
 }
 
 .form-input-block{
-    grid-template-rows: 4vh 16vh;
+    grid-template-rows: 4vh 12vh;
 }
 
 .form-grid-row{
-    grid-template-rows: 4vh 16vh;
+    grid-template-rows: 4vh 12vh;
 }
 
 .form-grid-row-caption{
@@ -155,6 +177,11 @@ body{
 
 .form-grid-row-main-input{
     font-size: 6vh;
+
+}
+
+.form-grid-row-mini-input{
+    font-size: 4vh;
 
 }
 
