@@ -22,12 +22,12 @@ async function initMap() {
     function sendDataToTgBot(){
         try{
             let data_to_send = {
-                adress: document.getElementById("adress").value,
-                approach: document.getElementById("approach").value,
-                code: document.getElementById("code").value,
-                floor: document.getElementById("floor").value,
-                appartament: document.getElementById("appartament").value,
-                comment: document.getElementById("comment").value
+                "adress": document.getElementById("adress").value,
+                "approach": document.getElementById("approach").value,
+                "code": document.getElementById("code").value,
+                "floor": document.getElementById("floor").value,
+                "appartament": document.getElementById("appartament").value,
+                "comment": document.getElementById("comment").value
             }
             let data_to_send_string = JSON.parse(data_to_send);
             return data_to_send_string;
