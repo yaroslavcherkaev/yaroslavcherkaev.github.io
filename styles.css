@@ -147,6 +147,12 @@ body{
 
 }
 
+.open-map{
+    display: none;
+    font-family: "Roboto Mono", monospace;
+    font-size: 3vh;
+}
+
 @media (max-height: 500px) {
 
 
@@ -154,6 +160,7 @@ body{
     visibility: collapse;
 }
 .map{
+    display: none;
     visibility: collapse;
 }
 
@@ -191,5 +198,13 @@ body{
     font-size: 4vh;
 
 }
+
+.open-map{
+    display: flex;
+    font-family: "Roboto Mono", monospace;
+    font-size: 3vh;
+    justify-content: center;
+    align-items: center;
+}   
 
 }

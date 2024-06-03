@@ -29,7 +29,7 @@ async function initMap() {
                 appartament: document.getElementById("appartament").value,
                 comment: document.getElementById("comment").value
             }
-            return data_to_send;
+            return data_to_send.toString();
         }
         catch(e){
             return null;
