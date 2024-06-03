@@ -29,10 +29,11 @@ async function initMap() {
                 appartament: document.getElementById("appartament").value,
                 comment: document.getElementById("comment").value
             }
-            return data_to_send.toString();
+            let data_to_send_string = JSON.parse(data_to_send);
+            return data_to_send_string;
         }
         catch(e){
-            return null;
+            return "пустая строка?!";
         }
 
     }
