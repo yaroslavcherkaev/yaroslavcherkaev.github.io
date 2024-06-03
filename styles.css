@@ -30,14 +30,14 @@ body{
     width: 100%;
     min-height: 100%;
     display: grid;
-    grid-template-rows: 40vh 55vh;
+    grid-template-rows: 40vh 50vh 5vh;
 }
 
 .form-grid{
     display: grid;
     grid-template-rows: 10vh 10vh 10vh 10vh;
     grid-template-columns: 100%;
-    background-color: var(--tg-theme-bg-color);
+    background-color: var(--tg-theme-secondary-bg-color);
     width: 100%;
     padding-left: 20px;   
     padding-right: 20px;  
@@ -114,13 +114,13 @@ body{
 }
 
 .map-pin-circle{
-    background: var(--tg-theme-bg-color);
+    background: var(--tg-theme-button-color);
     border-radius: 4rem;
     content: "";
     height: 3vh;
     width: 3vh;
-    left: 0.8vh;
     position: absolute;
+    left:-1.2vh;
     top: 1px;
     transition: transform 300ms;
     z-index: 1001;
@@ -132,13 +132,20 @@ body{
     content: "";
     height: 3vh;
     width: 3vh;
-    left: 2vh;
     position: absolute;
-    top: 2vh;
+    top: 2.5vh;
     transition: transform 300ms;
     width: 0.5vh;
 }
 
+.footer{
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto Mono", monospace;
+    font-size: 2vh;
+    align-items: center;
+
+}
 
 @media (max-height: 500px) {
 
