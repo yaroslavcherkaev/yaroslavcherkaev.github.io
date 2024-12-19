@@ -212,7 +212,7 @@ button{
     .logotype{
         
         p{
-            font-size: 32px;
+            font-size: 24px;
             margin:20px;
             
         }
@@ -220,8 +220,8 @@ button{
 
     .menubar{
         visibility: visible;
-        width:90px;
-        height:46px;
+        width:80px;
+        height:36px;
     }
 
     .mini-menu{
@@ -285,7 +285,7 @@ button{
         height: 62px;
         border: 0;
         border-radius: 100%;
-        font-size: 36px;
+        font-size: 24px;
     }
     
 
