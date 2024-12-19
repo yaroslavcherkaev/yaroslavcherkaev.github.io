@@ -193,65 +193,78 @@ button{
     .header{
         padding-left: 20px;
         padding-right: 20px;
+        height: 200px;
         box-shadow: none;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
     }
+
     .navigation{
         visibility: collapse;
     }
-    .logotypeimg{
-        width:48px;
-        height:46px;
-    }
-    .logotype{
 
+    .logotypeimg{
+        width:120px;
+        height:100px;
+    }
+
+    .logotype{
+        
         p{
-            margin:5px;
+            font-size: 32px;
+            margin:20px;
+            
         }
     }
 
     .menubar{
         visibility: visible;
-        width: 45px;
-        height:23px;
+        width:90px;
+        height:46px;
     }
 
     .mini-menu{
+        margin-top: 80px;
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .bigsearch{
-        font-size: 40px;
+        font-size: 140px;
     }
+
     .titlesearch{
-        font-size: 17px;
+        font-size: 36px;
     }
+
     .main-search-block{
         padding-left: 20px;
         padding-right: 20px;
     }
 
     .main-search-block-a{
-        font-size: 16px;
+        font-size: 36px;
         color:#8B9DE6;
-        line-height: 5px;
+        line-height: 44px;
     }
 
     .main-search-block-p{
-        font-size: 14px;
+        font-size: 34px;
         color:#727374;
-        line-height: 5px;
+        line-height: 35px;
     }
 
     .searchbutton{
-        visibility: collapse;
+        display: none;
     }
 
     input{
-        font-size: 16px;
+        font-size: 36px;
     }
 
     .vector{
-        visibility: collapse;
+        display: none;
     }
 
     .footer-footermenu{
@@ -266,6 +279,15 @@ button{
         align-items: center;
         margin-bottom: 0px;
     }
+
+    .nav-button{
+        width: 62px;
+        height: 62px;
+        border: 0;
+        border-radius: 100%;
+        font-size: 36px;
+    }
+    
 
     .footermenu{
         display: none;
