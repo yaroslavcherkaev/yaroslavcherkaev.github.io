@@ -219,14 +219,8 @@ button{
         height:100px;
     }
 
-    .logotype{
-        
-        p{
-            font-size: 20px;
-            line-height: 16px;
-            margin-top:0px;
-            
-        }
+    .logotype-text{
+
     }
 
     .menubar{
