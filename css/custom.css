@@ -1,0 +1,34 @@
+.t-checkbox__control {
+    font-family: "Inter";
+    font-weight: 400;
+}
+
+.karaoke {
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 10; /* На случай наложения элементов */
+}
+
+.karaoke span {
+  font-size: 6vw;
+  font-family: sans-serif, Arial, Helvetica;
+  color: transparent !important;
+  background: linear-gradient(to right, #3f3f3f 50%, #fff 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: 0 0 !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
+  animation: karaoke-slide 3s linear infinite !important;
+  display: inline-block;
+  line-height: 1.2; /* Для корректного отображения текста */
+}
+
+@keyframes karaoke-slide {
+  0% { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
+}
